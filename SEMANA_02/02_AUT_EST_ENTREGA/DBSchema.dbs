@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Sqlite" id="Project-101" database="Sqlite" >
+	<schema name="Default" >
+		<table name="TblExperiencia" >
+			<column name="Empresa" type="TEXT" jt="-1" />
+			<column name="DataInicio" type="DATE" jt="91" />
+			<column name="DataFim" type="DATE" jt="91" />
+			<column name="Descricao" type="DATE" jt="91" />
+			<column name="IdPessoas" type="INTEGER" jt="4" />
+			<fk name="fk_TblExperiencia" to_schema="Default" to_table="TblPessoas" >
+				<fk_column name="IdPessoas" pk="IdPessoas" />
+			</fk>
+		</table>
+		<table name="TblFormacao" >
+			<column name="Curso" type="TEXT" jt="-1" />
+			<column name="DataInicio" type="DATE" jt="91" />
+			<column name="DataFim" type="DATE" jt="91" />
+			<column name="Descricao" type="LONGTEXT" jt="-1" />
+			<column name="IdPessoas" type="INTEGER" jt="4" />
+			<fk name="fk_TblFormacao" to_schema="Default" to_table="TblPessoas" >
+				<fk_column name="IdPessoas" pk="IdPessoas" />
+			</fk>
+		</table>
+		<table name="TblHabilidades" prior="TblRealizacoes_0" >
+			<column name="Título" type="TEXT" jt="-1" />
+			<column name="Data" type="DATE" jt="91" />
+			<column name="Nota" prior="Descricao" type="INTEGER" jt="4" />
+			<column name="IdPessoas" type="INTEGER" jt="4" />
+			<fk name="fk_TblHabilidades" to_schema="Default" to_table="TblPessoas" >
+				<fk_column name="IdPessoas" pk="IdPessoas" />
+			</fk>
+		</table>
+		<table name="TblPersonalidade" prior="TblHabilidades_0" >
+			<column name="Título" type="TEXT" jt="-1" />
+			<column name="Data" type="DATE" jt="91" />
+			<column name="Nota" type="INTEGER" jt="4" />
+			<column name="IdPessoas" type="INTEGER" jt="4" />
+			<fk name="fk_TblPersonalidade" to_schema="Default" to_table="TblPessoas" >
+				<fk_column name="IdPessoas" pk="IdPessoas" />
+			</fk>
+		</table>
+		<table name="TblPessoas" >
+			<column name="IdPessoas" type="INTEGER" jt="4" mandatory="y" />
+			<column name="NomePessoas" type="TEXT" jt="-1" mandatory="y" />
+			<column name="Cargo" type="TEXT" jt="-1" />
+			<column name="Endereco" type="TEXT" jt="-1" />
+			<column name="Telefone" type="TEXT" jt="-1" />
+			<column name="Email" type="TEXT" jt="-1" />
+			<column name="Descricao" type="TEXT" length="200" jt="-1" />
+			<index name="pk_TblPessoas" unique="PRIMARY_KEY" >
+				<column name="IdPessoas" />
+			</index>
+		</table>
+		<table name="TblRealizacoes" >
+			<column name="Título" type="TEXT" jt="-1" />
+			<column name="Data" type="DATE" jt="91" />
+			<column name="Descricao" type="TEXT" jt="-1" />
+			<column name="IdPessoas" type="INTEGER" jt="4" />
+			<fk name="fk_TblRealizacoes" to_schema="Default" to_table="TblPessoas" >
+				<fk_column name="IdPessoas" pk="IdPessoas" />
+			</fk>
+		</table>
+		<table name="TblRealizacoes_1" >
+			<column name="Título" type="TEXT" jt="-1" />
+			<column name="Data" type="DATE" jt="91" />
+			<column name="Descricao" type="TEXT" jt="-1" />
+		</table>
+	</schema>
+	<connector name="Sqlite" database="Sqlite" driver_class="org.sqlite.JDBC" driver_jar="sqlite-jdbc-3.40.0.0.jar" driver_desc="Standard" host="localhost" port="7210" instance="C:/Users/Inteli/Documents/GitHub/Tutorial_M2_GabrielColetto/SEMANA_02/02_AUT_EST_ENTREGA/db_curriculo.db" useSystemProxy="false" />
+	<layout name="Main Layout" id="Layout-235f" show_page_borders="y" show_relation="columns" >
+		<entity schema="Default" name="TblExperiencia" color="C1D8EE" x="304" y="208" />
+		<entity schema="Default" name="TblFormacao" color="C1D8EE" x="304" y="48" />
+		<entity schema="Default" name="TblHabilidades" color="3986C1" x="304" y="528" />
+		<entity schema="Default" name="TblPersonalidade" color="3986C1" x="304" y="672" />
+		<entity schema="Default" name="TblPessoas" color="C1D8EE" x="48" y="320" />
+		<entity schema="Default" name="TblRealizacoes" color="C1D8EE" x="304" y="368" />
+	</layout>
+</project>
