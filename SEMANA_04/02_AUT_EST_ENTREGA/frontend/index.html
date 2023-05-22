@@ -24,10 +24,10 @@
           saida += '<strong> '+ `${pessoa.NomePessoas}` + '</strong> ' + `${pessoa.Cargo}`  + ' - ' +  `${pessoa.Endereco}` + ' - ' + `${pessoa.Telefone}`  + ' - ' + `${pessoa.Email}`;
           saida += ' - <a href="/atualizaPessoas?id=' + `${pessoa.IdPessoas}` + '">EDITAR</a>';
           saida += ' | <a href="/removePessoas?id='+`${pessoa.IdPessoas}`+'">REMOVER</a></br>';
-          saida += '| <a href="/formacao.html?id='+`${pessoa.IdPessoas}`+'">FORMAÇÃO</a></br>';
-          saida += '| <a href="/experiencia.html?id='+`${pessoa.IdPessoas}`+'">EXPERIÊNCIA</a></br>';
-          saida += '| <a href="/habilidades.html?id='+`${pessoa.IdPessoas}`+'">HABILIDADES</a></br>';
-          saida += '| <a href="/personalidade?id='+`${pessoa.IdPessoas}`+'">PERSONALIDADE</a></br>';
+          saida += '| <a href="/formacao?id='+`${pessoa.IdPessoas}`+'">FORMAÇÃO</a></br>';
+          saida += '| <a href="/experiencia?id='+`${pessoa.IdPessoas}`+'">EXPERIÊNCIA</a></br>';
+          saida += '| <a href="/habilidades?id='+`${pessoa.IdPessoas}`+'">Habilidades</a></br>';
+          saida += '| <a href="/personalidade?id='+`${pessoa.IdPessoas}`+'">EXPERIÊNCIA</a></br>';
           saida += '| <a href="/realizacoes?id='+`${pessoa.IdPessoas}`+'">REALIZAÇÕES</a></br>';
         });
         document.getElementById('resultado').innerHTML = saida;

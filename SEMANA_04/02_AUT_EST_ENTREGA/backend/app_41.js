@@ -1,7 +1,6 @@
 const express = require('express'); 
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
-const path = require('path');
 
 const sqlite3 = require('sqlite3').verbose();
 const DBPATH = '../data/db_curriculo.db';

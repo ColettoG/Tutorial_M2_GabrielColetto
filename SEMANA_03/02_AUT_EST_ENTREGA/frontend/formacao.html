@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMAÇÃO</title>
+</head>
+<body>
+    <h1>FORMAÇÃO</h1>
+    <div id="formacao-div"></div>
+    <!-- começando javascript -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        console.log(id);
+        url = '/formacao?id=' + id;
+
+        fetch(url)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                console.log(data);
+                let formacao = data[0];
+                var div = document.getElementById('formacao-div');
+                div.innerHTML += '<strong>Curso:</strong>' + `${formacao.Curso}` + '<br>';
+                div.innerHTML += '<strong>Início:</strong>' + `${formacao.DataInicio}` + '<br>';
+                div.innerHTML += '<strong>Fim:</strong>' + `${formacao.DataFim}` + '<br>';
+                div.innerHTML += '<strong>Descrição:</strong>' + `${formacao.Descricao}` + '<br>';
+            });
+    </script>
+</body>
+
+</html>
