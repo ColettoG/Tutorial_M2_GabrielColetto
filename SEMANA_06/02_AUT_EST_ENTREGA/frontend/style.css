@@ -6,6 +6,10 @@
     'main aside'
     'footer footer';
     grid-template-columns: 2fr 1fr;
+
+    max-width: 100%;
+    justify-content: center;
+
 }
 
 header {
@@ -71,4 +75,16 @@ header div {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
+}
+
+@media (max-width: 950px) {
+    .grid-container {
+        grid-template-areas:
+        "header"
+        "aside"
+        "main"
+        "footer";
+        grid-template-columns: 1fr;
+    }
+        
 }
